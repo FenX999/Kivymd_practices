@@ -1,0 +1,61 @@
+LoginInterface:
+
+<LoginInterface>:
+    MDBottomNavigation:
+        MDBottomNavigationItem:
+            name: "screen1"
+            text: 'Signup'
+            icon: "account"
+            MDToolbar:
+                title: "Signup Screen"
+                pos_hint: {'top':1}
+                right_action_items: [["weather-sunny", lambda x: app.color_changer()]]
+            MDBoxLayout:
+                id: login_interface
+                orientation: 'vertical'
+                size_hint: .8, .2
+                pos_hint: {"center_x": .5, "top":.7}
+                MDTextField:
+                    id: signup_username 
+                    hint_text: 'Username'
+                MDTextField:
+                    id: signup_email
+                    hint_text: 'Email'
+                MDTextField:
+                    id: signup_password
+                    hint_text: "Password"
+            MDBoxLayout:
+                size_hint_x: .2
+                size_hint_y: None
+                height: "40dp"
+                pos_hint: {"right": .9, "top": .5}
+                MDRaisedButton:
+                    text:  'SignUp'
+                    on_release: root.create_entry() 
+        MDBottomNavigationItem:
+            name: "screen2"
+            text: 'Log In'
+            icon: "login"
+            MDToolbar:
+                title: "Login Screen"
+                pos_hint: {'top':1}
+                right_action_items: [["weather-sunny", lambda x: app.color_changer()]]
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint: .8, .2
+                pos_hint: {"center_x": .5, "top":.7}
+                MDTextField:
+                    id: login_email
+                    hint_text: 'email'
+                MDTextField:
+                    id: login_password
+                    hint_text: 'password'
+            MDBoxLayout:
+                size_hint_x: .2
+                size_hint_y: None
+                height: "40dp"
+                pos_hint: {"right": .9, "top": .5}
+                MDRaisedButton:
+                    text:  'Login'
+                    on_release: root.login()
+
